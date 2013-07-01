@@ -1,4 +1,4 @@
-AppImage::Application.routes.draw do
+Michlinefinal::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,6 +56,18 @@ AppImage::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   
-  #APP_IMAGE_ROUTES
+  
+root :to => 'apps#index'
+match "/home" => "apps#home", :as => :home
+match "/auth/facebook/callback" => "apps#saveUserInfo", :as => :saveUserInfo
+match "/gallery" => "apps#gallery", :as => :gallery
+match "/saveAppEntry" => "apps#saveAppEntry", :as => :saveAppEntry
+match "/fetchUrlMetaData" => "apps#fetchUrlMetaData", :as => :fetchUrlMetaData
+match "/commentAdded" => "apps#commentAdded", :as => :commentAdded
+match "/likeAdded" => "apps#likeAdded", :as => :likeAdded
+match "/commentRemoved" => "apps#commentRemoved", :as => :commentRemoved
+match "/updateShareCount" => "apps#updateShareCount", :as => :updateShareCount
+match "/likeRemoved" => "apps#likeRemoved", :as => :likeRemoved
+
 
 end

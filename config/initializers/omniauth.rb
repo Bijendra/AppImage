@@ -5,7 +5,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   # provider :open_id, OpenID::Store::Filesystem.new('tmp')                                                                                           
   # provider :linkedin, "consumer_key","consumer_secret" 
 
-  #APP_IMAGE_OMNIAUTH
+    provider :facebook, '180939481939867', '8fe44d34ab6ebd6b90cf51aeb0ad7bde', :scope => 'email,user_birthday,read_stream', :display => 'popup'
  	                                                                                             
 end
 

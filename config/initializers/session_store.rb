@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
-AppImage::Application.config.session_store :cookie_store, key: '_AppImage_session'
+Michlinefinal::Application.config.session_store :cookie_store, key: '_Michlinefinal_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-# AppImage::Application.config.session_store :active_record_store
+# Michlinefinal::Application.config.session_store :active_record_store

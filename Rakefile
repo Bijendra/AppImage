@@ -4,6 +4,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-AppImage::Application.load_tasks
+Michlinefinal::Application.load_tasks
 
 #APP_IMAGE_RAKEFILE

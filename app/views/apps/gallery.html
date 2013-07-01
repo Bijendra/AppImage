@@ -1,0 +1,325 @@
+<script src="/assets/lmwa.js" type="text/javascript"></script>
+<script type="text/javascript">
+  // Initializing tracking variables
+  var genThemeId = "51d0920144701f2bc1000009";
+  var genCanvasId = "51d0a97d44701fa703000005";
+  // It will be an unique id which will be generated when the user visits the page and will be the same for the entire session unless user stays on the page
+  var genTrackingId = uniqueString(); 
+  var genTrackingEvent = {};
+  var genActData = [];
+  window.onload = trackPage();
+  window.onbeforeunload = trackEvents();
+</script>
+<div ><div style='position:relative;'><div style="background:url(/AppAssets/MFwOTytOFR8AnPejPUKE.jpg) no-repeat;width:801px;height:900px;"><div style='position:absolute;left:10px;top:10px;z-index:0'><div style='position:relative;'><div style="width:400px;height:500px;"><div style='position:absolute;left:475px;top:533px;z-index:3'>				<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : ' 500399773343892',
+      status     : true,
+      cookie     : true,
+      xfbml      : true
+    });
+if (typeof(FB) != 'undefined'
+     && FB != null ) {
+    
+FB.Event.subscribe('edge.create',
+    function(response) {
+         likeAdded(response); likeAdded(response);
+    }
+);
+
+FB.Event.subscribe('edge.remove',
+    function(response) {
+       likeRemoved(response);
+    }
+);
+FB.Event.subscribe('comment.create',
+    function(response) {
+         commentAdded(response);
+    }
+);
+FB.Event.subscribe('comment.remove',
+    function(response) {
+         commentRemoved(response);
+    }
+);
+} else {
+   
+}
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+<div>fb-js-sdk</div>
+      
+      
+      
+      </div><div style='position:absolute;left:235px;top:94px;z-index:3'><div style='position:relative;'><div  >
+  <div      style="position:relative;">
+    <% for itr in  @app_entries %>
+      <div style="position:relative;">
+         <div ><div style='position:relative;'>						<div      style="width:540px;height:112px;background:url(/AppAssets/lIXDu9Bjk6OEYTL6cXDp.png) no-repeat;"  onclick="trackClick('51d0bc3b44701f983b000019');" onmouseover="trackHover('51d0bc3b44701f983b000019');">  <div style='position:absolute;left:468px;top:52px;z-index:8'>	<a     style="color:#FFFFFF;width:84px;height:40px;font-size:12px;" href="<%= itr.story_url%>"  onclick="trackClick('51d0c59f44701fa33a000001');" onmouseover="trackHover('51d0c59f44701fa33a000001');"  > Read More</a>
+      </div><div style='position:absolute;left:7px;top:24px;z-index:3'>		<img     src="https://graph.facebook.com/<%= itr.uid %>/picture"  alt="image"  style="height:72px;width:78px;"   onclick="trackClick('51d0bc3b44701f983b00001a');" onmouseover="trackHover('51d0bc3b44701f983b00001a');" />
+      
+      
+      
+      
+      </div><div style='position:absolute;left:217px;top:6px;z-index:3'><div      style="height:90px;width:316px;"  onclick="trackClick('51d0bc3b44701fa70300002b');" onmouseover="trackHover('51d0bc3b44701fa70300002b');">
+ <div >			<label       style="color:#FFFFFF;"    onclick="trackClick('51d0bc3b44701f983b00001b');" onmouseover="trackHover('51d0bc3b44701f983b00001b');" ><%=h truncate(itr.description, :length => 100) %></label>	
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </div>
+</div>
+      </div><div style='position:absolute;left:148px;top:9px;z-index:3'>		<img     src="<%= itr.img_src %>"  alt="image"  style="width:60px;height:60px;"   onclick="trackClick('51d0bc3b44701fdc5c00000e');" onmouseover="trackHover('51d0bc3b44701fdc5c00000e');" />
+      
+      
+      
+      
+      </div><div style='position:absolute;left:106px;top:78px;z-index:3'>							<div class="fb-like" data-href="<%= itr.story_url%>" data-send="false" data-width="50" data-show-faces= false"  data-layout="button_count" onclick="trackClick('51d0bc3b44701fdc5c00000f');" onmouseover="trackHover('51d0bc3b44701fdc5c00000f');">Like</div>
+
+      
+      
+      
+      
+      
+      </div><div style='position:absolute;left:190px;top:76px;z-index:3'>			<label       style="color:#FFFFFF;"   onclick="showCommentBox('<%= itr.id %>');trackClick('51d0bc3b44701fa70300002c');" onmouseover="trackHover('51d0bc3b44701fa70300002c');" >Comment</label>	
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </div><div style='position:absolute;left:490px;top:76px;z-index:3'><label onclick="postToFeed();trackClick('51d0bc3c44701fa70300002d');" onmouseover="trackHover('51d0bc3c44701fa70300002d');" >share</label>
+<script>
+function postToFeed() {
+        var obj = {
+          method: 'feed',
+          redirect_uri: '',
+          link: '<%= itr.story_url%>',
+          picture: '',
+          name: '',
+          caption: '',
+          description: ''
+        };
+
+        function callback(response) {
+if (response && response.post_id) {
+         
+    } 
+                  
+        }
+
+        FB.ui(obj, callback);
+}
+</script>
+      
+      
+      
+      
+      
+      </div><div style='position:absolute;left:90px;top:99px;z-index:10'><div  id="comment_<%= itr.id %>"    style="display:none;width:450px;height:px;background:#FFFFFF;"  onclick="trackClick('51d0bc3c44701f983b00001d');" onmouseover="trackHover('51d0bc3c44701f983b00001d');">
+ <div ><div class="fb-comments" data-href=" <%= itr.story_url%>" data-width=" 450 450" data-num-posts=" 1"  onclick="trackClick('51d0bc3c44701f983b00001c');" onmouseover="trackHover('51d0bc3c44701f983b00001c');" >FB comment</div>
+
+      
+      
+      
+      
+      </div>
+</div>
+      </div></div>	
+      
+      
+      
+      
+      
+      
+      </div></div>
+       </div>
+    <% end %>
+  </div>
+</div></div></div></div></div></div></div></div></div><script type='text/javascript'>/* img display toggle */function change_img(id1,id2) { document.getElementById(id1).style.display='none';
+document.getElementById(id2).style.display='block'; }/*  */function submitAjaxForm(form) { var url = document.getElementById('url').value;
+			var desc = document.getElementById('desc').value;
+
+			if(url == '') {
+				alert("please enter an url");
+				return false;
+			}
+			if(desc == '') {
+				alert("please enter a description");
+				return false;
+			}
+			 var formData = new FormData(form);
+	 		var xmlhttp;
+			if (window.XMLHttpRequest)
+			  {// code for IE7+, Firefox, Chrome, Opera, Safari
+			  xmlhttp=new XMLHttpRequest();
+			  }
+			else
+			  {// code for IE6, IE5
+			  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			  }
+			xmlhttp.onreadystatechange=function()
+			  {
+			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			    {
+				   document.getElementById('thanksDiv').style.display = 'block';
+				   //alert('success.');
+			    }
+			  }
+			xmlhttp.open("POST",form.action,true);
+			//xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xmlhttp.send(formData);
+			return false; }/*  */function fetchUrlMetaData(url, desc, img1, img2, img3, loading) { var xmlhttp;
+var url1 = document.getElementById(url).value;
+if(url1.substring(0,4) != 'http') {
+  alert("please add http/https at start of url");
+ return;
+}
+ document.getElementById(loading).style.display = "block";
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		    if(JSON.parse(xmlhttp.responseText).error !="" && JSON.parse(xmlhttp.responseText).error !=undefined){
+		    	alert("Given url is incorrect");
+		    }else{
+		    document.getElementById(desc).innerHTML=JSON.parse(xmlhttp.responseText).title + "<br>"+ JSON.parse(xmlhttp.responseText).description;
+		    document.getElementById(img1).src = JSON.parse(xmlhttp.responseText).img1;
+		    document.getElementById(img2).src = JSON.parse(xmlhttp.responseText).img2;
+		    document.getElementById(img3).src = JSON.parse(xmlhttp.responseText).img3;
+		    document.getElementById('radio1').value = JSON.parse(xmlhttp.responseText).img1;
+		    document.getElementById('radio2').value = JSON.parse(xmlhttp.responseText).img2;
+		    document.getElementById('radio3').value = JSON.parse(xmlhttp.responseText).img3;
+		    document.getElementById(loading).style.display = "none";
+		    }
+	    }
+	  }
+	xmlhttp.open("POST","/fetchUrlMetaData",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("link="+document.getElementById(url).value); }/*  */function commentAdded(response) { var xmlhttp;
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		    
+	    }
+	  }
+	xmlhttp.open("POST","commentAdded",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("response="+response); }/*  */function commentRemoved(response) { var xmlhttp;
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		    
+	    }
+	  }
+	xmlhttp.open("POST","commentRemoved",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("response="+response); }/*  */function updateShareCount(entry_id) { var xmlhttp;
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		    
+	    }
+	  }
+	xmlhttp.open("POST","updateShareCount",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("entry_id="+entry_id); }/*  */function likeRemoved(response) { var xmlhttp;
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		    
+	    }
+	  }
+	xmlhttp.open("POST","likeRemoved",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("response="+response); }/*  */function likeAdded(response) { var xmlhttp;
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		    
+	    }
+	  }
+	xmlhttp.open("POST","likeAdded",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("response="+response); }/* show comment box */function showCommentBox(id) { document.getElementById('comment_'+ id).style.display=''; }</script>
